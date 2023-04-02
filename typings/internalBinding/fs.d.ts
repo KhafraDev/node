@@ -220,7 +220,7 @@ declare namespace InternalFSBinding {
   function writeString(fd: number, value: string, pos: unknown, encoding: unknown, usePromises: typeof kUsePromises): Promise<number>;
 }
 
-declare function InternalBinding(binding: 'fs'): {
+export interface FsBinding {
   FSReqCallback: typeof InternalFSBinding.FSReqCallback;
 
   FileHandle: typeof InternalFSBinding.FileHandle;
@@ -269,4 +269,4 @@ declare function InternalBinding(binding: 'fs'): {
   writeBuffer: typeof InternalFSBinding.writeBuffer;
   writeBuffers: typeof InternalFSBinding.writeBuffers;
   writeString: typeof InternalFSBinding.writeString;
-};
+}

@@ -72,7 +72,7 @@ declare namespace InternalAsyncWrapBinding {
   }
 }
 
-declare function InternalBinding(binding: 'async_wrap'): {
+export interface AsyncWrapBinding {
   setupHooks(): {
     init: (
       asyncId: number,
@@ -128,5 +128,5 @@ declare function InternalBinding(binding: 'async_wrap'): {
     kAsyncIdCounter: 2;
     kDefaultTriggerAsyncId: 3;
   };
-  Providers: InternalAsyncWrapBinding.Providers;
-};
+  Providers: InternalAsyncWrapBinding.Providers
+}
